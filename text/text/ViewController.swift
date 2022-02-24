@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
 import SwiftUI
+import WCDBSwift
 
 
 class ViewController: UIViewController {
@@ -132,6 +133,22 @@ class ViewController: UIViewController {
         listTable.separatorColor = .clear
         welltColltion.reloadData()
         tableViewHeight.constant = 10*80
+        
+        
+        //模拟请求接口
+        
+        InterfaceRequest.getUserInfo().done { model in
+            
+            SLog("============》成功")
+            
+        }.catch { error in
+            
+            SLog("============》失败")
+            
+        }.finally { [weak self] in
+             
+            SLog("结束")
+        }
         
     }
     

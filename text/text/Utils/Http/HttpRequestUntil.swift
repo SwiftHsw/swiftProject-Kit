@@ -301,3 +301,48 @@ class HttpRequestUntil{
     }
     
 }
+
+
+//MARK  -  上传图片
+extension HttpRequestUntil {
+    
+   
+    public func upload<T: Convertible>(url: String, data: Data) -> Promise<RequestResultModel<T>> {
+        
+        let urlStr = HttpURLType.main.url + url
+        var uploadHeaders = HTTPHeaders(self.headers.dictionary)
+        uploadHeaders.update(name: "Content-Type", value: "multipart/from-data")
+        uploadHeaders.update(name: "Content-Disposition", value: "form-data")
+        
+        return Promise<RequestResultModel<T>> { resolver in
+            AFSession.upload(multipartFormData: { multipartFormData in
+                //\(CommonUtil.uuidStr()).jpeg
+                multipartFormData.append(data, withName: "file", fileName: "xxx.jpeg", mimeType: "image/jpeg")
+            }, to: urlStr, headers: uploadHeaders).responseJSON { response in
+                debugPrint(response)
+                switch response.result {
+                case .success:
+                    // 解析数据
+                    guard let json = response.value as? [String: Any] else {
+                        resolver.reject(RequestError(code: RequestErrorType.parsing.rawValue, data: "", message: "数据解析错误"))
+                        return
+                    }
+                    // 解析json
+                    let resultModel: RequestResultModel<T> = self.parsingJson(json)
+                    // 后台code!=200, 走错误处理
+                    guard resultModel.isSuccess else {
+                        self.handleFail(urlStr: urlStr, resultModel: resultModel, resolver: resolver)
+                        return
+                    }
+                    // 返回model
+                    resolver.fulfill(resultModel)
+                case let .failure(error):
+                    debugPrint(error)
+                    resolver.reject(RequestError(code: RequestErrorType.network.rawValue, data: "", message: "网络错误，请稍后重试"))
+                }
+            }
+        }
+    }
+    
+}
+

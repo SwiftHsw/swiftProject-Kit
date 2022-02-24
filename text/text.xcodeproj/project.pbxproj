@@ -48,6 +48,7 @@
 		6444779A27C752100052EF56 /* HttpEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444779927C7520F0052EF56 /* HttpEnum.swift */; };
 		6444779C27C757500052EF56 /* HttpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444779B27C757500052EF56 /* HttpRequestModel.swift */; };
 		6444779E27C75C6F0052EF56 /* EncryptUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444779D27C75C6F0052EF56 /* EncryptUtil.swift */; };
+		644477A027C76DEF0052EF56 /* InterfaceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444779F27C76DEF0052EF56 /* InterfaceRequest.swift */; };
 		64BA18B927C616F800580022 /* BaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BA18B827C616F800580022 /* BaseNavigationController.swift */; };
 		64BA18BC27C6178300580022 /* UIEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BA18BB27C6178300580022 /* UIEnum.swift */; };
 		64BA18BE27C61BD700580022 /* MainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BA18BD27C61BD700580022 /* MainUtils.swift */; };
@@ -101,6 +102,7 @@
 		6444779927C7520F0052EF56 /* HttpEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpEnum.swift; sourceTree = "<group>"; };
 		6444779B27C757500052EF56 /* HttpRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestModel.swift; sourceTree = "<group>"; };
 		6444779D27C75C6F0052EF56 /* EncryptUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptUtil.swift; sourceTree = "<group>"; };
+		6444779F27C76DEF0052EF56 /* InterfaceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceRequest.swift; sourceTree = "<group>"; };
 		64BA18B827C616F800580022 /* BaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationController.swift; sourceTree = "<group>"; };
 		64BA18BB27C6178300580022 /* UIEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEnum.swift; sourceTree = "<group>"; };
 		64BA18BD27C61BD700580022 /* MainUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUtils.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			children = (
 				6444779B27C757500052EF56 /* HttpRequestModel.swift */,
 				6444779727C7516A0052EF56 /* HttpRequestUntil.swift */,
+				6444779F27C76DEF0052EF56 /* InterfaceRequest.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -421,6 +424,7 @@
 				6429D5C727C5D02800CD1D83 /* NSObject+Extend.swift in Sources */,
 				64BA18BE27C61BD700580022 /* MainUtils.swift in Sources */,
 				6429D5AF27C5CFD200CD1D83 /* UIViewController+Extend.swift in Sources */,
+				644477A027C76DEF0052EF56 /* InterfaceRequest.swift in Sources */,
 				6429D5DF27C5D8ED00CD1D83 /* secondViewCell.swift in Sources */,
 				6429D5C827C5D02800CD1D83 /* String+Extend.swift in Sources */,
 				6429D5CD27C5D02800CD1D83 /* NSDecimalNumber+Extension.swift in Sources */,
