@@ -1,0 +1,58 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '9.0'
+
+target 'text' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for text
+
+  # 网络请求框架
+  pod 'Alamofire', '5.4.4'
+  # 图片缓存框架
+  pod 'Kingfisher', '6.2.1'
+  # 数据库框架
+  pod 'WCDB.swift', '1.0.8.2'
+  # 模型转换框架
+  pod 'KakaJSON', '1.1.2'
+  # 约束框架
+  pod 'SnapKit', '5.0.1'
+  # 加密框架
+  pod 'SwiftyRSA', '1.5.0'
+  # 异步编程框架
+  pod 'PromiseKit', '6.13.1'
+  # 键盘管理框架
+  pod 'IQKeyboardManagerSwift', '6.5.9'
+  # 下拉刷新
+  pod 'MJRefresh', '3.5.0'
+  # 轮播图
+  pod 'FSPagerView', '0.8.3'
+  # 多层scrollView嵌套
+  pod 'JXSegmentedView', '1.2.7'
+  pod 'JXPagingView/Paging', '2.0.13'
+  # 图片选择器
+  pod 'ZLPhotoBrowser', '4.1.9'
+  # 图片浏览器
+  pod 'SKPhotoBrowser', '7.0.0'
+
+  # firebase
+  pod 'Firebase/Auth', '8.8.0'
+  pod 'Firebase/Firestore', '8.8.0'
+  pod 'Firebase/Analytics', '8.8.0'
+  
+  # 密码输入框
+  pod 'CRBoxInputView', '1.2.2'
+  
+  # 动效加载
+  pod 'lottie-ios'
+  
+  # 底部弹出视图控制器拖拽手势
+  pod 'HWPanModal', '0.6.7'
+  
+  # 谷歌地图
+  pod 'GoogleMaps', '6.0.1'
+  pod 'GooglePlaces', '6.0.0'
+
+  pod "CryptoSwift", ">= 0.10.0"
+  
+end

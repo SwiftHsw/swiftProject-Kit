@@ -1,0 +1,6 @@
+framework module Pods_text {
+  umbrella header "Pods-text-umbrella.h"
+
+  export *
+  module * { export * }
+}
