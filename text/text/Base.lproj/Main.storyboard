@@ -347,6 +347,7 @@
                     <connections>
                         <outlet property="allMoneyLable" destination="U8g-0l-nQw" id="d29-Iw-OUW"/>
                         <outlet property="listTable" destination="tXC-TW-5Yw" id="ARf-sS-zL5"/>
+                        <outlet property="mainScrollView" destination="d0B-nk-YSV" id="Bod-Pk-xmp"/>
                         <outlet property="tableViewHeight" destination="rYB-3W-h8e" id="snA-Dy-LPS"/>
                         <outlet property="welltColltion" destination="bxi-zF-uA2" id="aYP-iB-yjY"/>
                     </connections>

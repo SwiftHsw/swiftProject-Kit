@@ -7,12 +7,12 @@
 
 import UIKit
 import Foundation
-import SwiftUI
-import WCDBSwift
+ import MJRefresh
 
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var allMoneyLable: UILabel!
     
     @IBOutlet weak var tableViewHeight: NSLayoutConstraint!
@@ -150,6 +150,17 @@ class ViewController: UIViewController {
             SLog("结束")
         }
         
+        
+        //普通的下拉刷新
+//        let header = MJRefreshNormalHeader()
+//        header.setRefreshingTarget(self, refreshingAction: #selector(headerMjRefres))
+//        mainScrollView.mj_header = header
+        
+        //自定义下拉刷新
+        let mjheader = UIScrollView.addGifHeaderRefresh(refreshingBlock: { [weak self] in
+            self?.headerMjRefres()
+        })
+        mainScrollView.mj_header = mjheader
     }
     
     
@@ -173,6 +184,16 @@ class ViewController: UIViewController {
         return parameters
     }
 
+    
+    @objc func headerMjRefres(){
+         SLog("开始刷新")
+        
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) { [weak self] in
+              
+            self?.mainScrollView.mj_header?.endRefreshing()
+            
+        }
+    }
     
     @IBAction func hiddenMoneyAction(_ sender: Any) {
         let btn = sender as? UIButton
