@@ -8,6 +8,7 @@
 import UIKit
 import Foundation
  import MJRefresh
+import PromiseKit
 
 
 class ViewController: UIViewController {
@@ -188,11 +189,14 @@ class ViewController: UIViewController {
     @objc func headerMjRefres(){
          SLog("开始刷新")
         
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) { [weak self] in
-              
+        after(seconds:3).done{ [weak self] in
             self?.mainScrollView.mj_header?.endRefreshing()
-            
-        }
+         }
+//        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3) { [weak self] in
+//
+//            self?.mainScrollView.mj_header?.endRefreshing()
+//
+//        }
     }
     
     @IBAction func hiddenMoneyAction(_ sender: Any) {
