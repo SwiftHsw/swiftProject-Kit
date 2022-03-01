@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6403862327CDB5FA00316B09 /* WCDBUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403862227CDB5FA00316B09 /* WCDBUtil.swift */; };
+		6403862627CDED0900316B09 /* sampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403862527CDED0900316B09 /* sampleModel.swift */; };
 		6429D59327C4C61800CD1D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429D59227C4C61800CD1D83 /* AppDelegate.swift */; };
 		6429D59727C4C61800CD1D83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429D59627C4C61800CD1D83 /* ViewController.swift */; };
 		6429D59A27C4C61800CD1D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6429D59827C4C61800CD1D83 /* Main.storyboard */; };
@@ -63,6 +65,8 @@
 /* Begin PBXFileReference section */
 		1C911B884AE13DC486C7E4D0 /* Pods_text.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_text.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E65C5BF0DABD79E23226409 /* Pods-text.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-text.release.xcconfig"; path = "Target Support Files/Pods-text/Pods-text.release.xcconfig"; sourceTree = "<group>"; };
+		6403862227CDB5FA00316B09 /* WCDBUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCDBUtil.swift; sourceTree = "<group>"; };
+		6403862527CDED0900316B09 /* sampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleModel.swift; sourceTree = "<group>"; };
 		6429D58F27C4C61800CD1D83 /* text.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = text.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6429D59227C4C61800CD1D83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6429D59627C4C61800CD1D83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -130,6 +134,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6403862427CDECDE00316B09 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6403862527CDED0900316B09 /* sampleModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		6429D58627C4C61800CD1D83 = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +163,7 @@
 		6429D59127C4C61800CD1D83 /* text */ = {
 			isa = PBXGroup;
 			children = (
+				6403862427CDECDE00316B09 /* Models */,
 				647E658B27C869E90088EE91 /* Components */,
 				64BA18BA27C6176F00580022 /* Enum */,
 				6429D5E327C6132700CD1D83 /* Modules */,
@@ -180,6 +193,7 @@
 				6429D5A727C4C78E00CD1D83 /* Device.swift */,
 				6429D5E127C5DAF400CD1D83 /* Macro.swift */,
 				6444779D27C75C6F0052EF56 /* EncryptUtil.swift */,
+				6403862227CDB5FA00316B09 /* WCDBUtil.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -476,6 +490,7 @@
 				6429D5D627C5D02800CD1D83 /* UIFont+Extend.swift in Sources */,
 				6429D5C627C5D02800CD1D83 /* Dictionary+Extend.swift in Sources */,
 				64BA18BC27C6178300580022 /* UIEnum.swift in Sources */,
+				6403862327CDB5FA00316B09 /* WCDBUtil.swift in Sources */,
 				6429D5D027C5D02800CD1D83 /* UIImageView+Extend.swift in Sources */,
 				64BA18B927C616F800580022 /* BaseNavigationController.swift in Sources */,
 				6444779E27C75C6F0052EF56 /* EncryptUtil.swift in Sources */,
@@ -484,6 +499,7 @@
 				6429D5D727C5D02800CD1D83 /* UIButton+Extend.swift in Sources */,
 				64BA18C127C6295500580022 /* HomeColletionCell.swift in Sources */,
 				6429D5A827C4C78E00CD1D83 /* Device.swift in Sources */,
+				6403862627CDED0900316B09 /* sampleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

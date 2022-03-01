@@ -9,6 +9,7 @@ import UIKit
 import Foundation
  import MJRefresh
 import PromiseKit
+import KakaJSON
 
 
 class ViewController: UIViewController {
@@ -78,6 +79,7 @@ class ViewController: UIViewController {
         return Img
     }()
     
+   private  var datas : [sampleModel] = []
     deinit{
         NotificationCenter.default.removeObserver(self)
     }
@@ -133,7 +135,7 @@ class ViewController: UIViewController {
         listTable.rowHeight = 80
         listTable.separatorColor = .clear
         welltColltion.reloadData()
-        tableViewHeight.constant = 10*80
+       
         
         
         //模拟请求接口
@@ -146,8 +148,8 @@ class ViewController: UIViewController {
             
             SLog("============》失败")
             
-        }.finally { [weak self] in
-             
+        }.finally {
+             //[weak self] in
             SLog("结束")
         }
         
@@ -162,9 +164,122 @@ class ViewController: UIViewController {
             self?.headerMjRefres()
         })
         mainScrollView.mj_header = mjheader
+        
+        
+        
+        
+        FanXingCutom()
+        
+         
+        print("====================数据库使用增删改====================")
+       
+        let model = sampleModel()
+        model.amount = "30"
+        model.id = "1"
+        model.chainShortName = "ETH"
+        model.currencyShotName = "币种简称"
+        model.from = "福建厦门"
+        model.status = 2006
+        model.type = 2
+        
+        
+        let model2 = sampleModel()
+        model2.amount = "60"
+        model2.id = "2"
+        model2.chainShortName = "BTM"
+        model2.from = "福建龙潭"
+        model2.status = 1005
+        model2.type = 1
+        model2.currencyShotName = "币种简称"
+        print(model2.kj.JSONString())
+        
+        
+        print("增加一个model")
+         WCDBUtil.share.insertObject([model,model2], tableName: TABLENAME_sampleModel)
+     
+        
+        getwcdbList().done { relust in
+            print("查询到该表的所有数据\(relust)")
+
+            guard  relust.count>0 else{return}
+            self.datas = relust
+            self.listTable.reloadData()
+            self.tableViewHeight.constant = CGFloat(relust.count*80)
+            
+        }.catch { (error) in
+            print("执行失败了\(error)")
+        }.finally {
+            print("执行完成")
+            
+            after(seconds: 2).done{
+                print("延时刷新下UI")
+            }
+        }
+        
+    }
+  
+    
+    
+    
+    public func getwcdbList() -> Promise<[sampleModel]>{
+        return Promise<[sampleModel]> { (reslover) in
+            let list: [sampleModel] = WCDBUtil.share.getObjects(TABLENAME_sampleModel) ?? []
+             reslover.fulfill(list)
+        }
+    }
+    
+    public func FanXingCutom(){
+        //泛型练习
+        
+        struct Stack<T>{
+            var items = [T]()
+            mutating func push(_ item:T){
+                items.append(item)
+            }
+            
+            mutating func pop() -> T{
+                return items.removeLast()
+            }
+            
+            mutating func remoFistObjct() -> T{
+                return items.removeFirst()
+            }
+        }
+        
+        var stackofString = Stack<String>()
+        
+        stackofString.push("黄世文")
+        stackofString.push("黄琳琳")
+        print(stackofString.items)
+        
+        var cutomDic = Stack<[String]>()
+        
+        cutomDic.push(["黄世文","黄世文"])
+        cutomDic.push(["黄世文","黄LL"])
+        let items :[String]  = cutomDic.remoFistObjct()
+        print(items)
+        
+        let strings = ["1","2","3","4"]
+        
+        if let index = findIndex("3", strings){
+            print("索引为\(index)")
+        }
+            
+        
+        
     }
     
     
+    public func findIndex(_ ofString:String, _ stringArray : [String]) ->Int?{
+        for (index,vaule) in stringArray.enumerated(){
+            if vaule == ofString {
+                return index
+            }
+        }
+        return nil
+    }
+    
+  
     @IBAction func prentSeonVc(_ sender: Any) {
         
         let vc = secondViewC.fromStoryboard(name: "Main")
@@ -267,21 +382,22 @@ extension ViewController:UICollectionViewDelegate,UICollectionViewDataSource{
 
 extension ViewController:UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return datas.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: HomeTableCell.className, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withType: HomeTableCell.self, for: indexPath)
+        let model = datas[indexPath.row]
+        cell.dertailable?.text = model.from
         cell.selectionStyle = .none
-        
         return cell
         
         
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+       
     }
      
     

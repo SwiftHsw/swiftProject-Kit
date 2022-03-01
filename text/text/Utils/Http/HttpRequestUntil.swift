@@ -155,6 +155,8 @@ class HttpRequestUntil{
         let urlStr = urlType.url + url
         let parameters = paramsEncrypt(parameters)
         
+        ///泛型  NSDictionary<NSArray<NSObject *> *> *  OCt有类似这样的写法
+        /// resolver是尖括号里面的类型、两层的泛型
         return Promise<RequestResultModel<T>> { resolver in
             // 开始HTTP请求
             AFSession.request(urlStr, method: .post, parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers).responseJSON { response in
@@ -232,6 +234,15 @@ class HttpRequestUntil{
             
         return nil
     }
+    public func jixiJson<T: Convertible>(_ jsonData:[String:Any]) -> RequestResultModel<T>{
+        
+        
+        let resultModel = jsonData.kj.model(RequestResultModel<T>.self)
+        
+        return resultModel
+        
+    }
+    
     
     /// 解析json
     private func parsingJson<T: Convertible>(_ json: [String: Any]) -> RequestResultModel<T> {

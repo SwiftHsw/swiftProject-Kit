@@ -8,19 +8,6 @@
 import UIKit
 import KakaJSON
 
-class BaseModel: NSObject,Convertible {
-
-    func kj_modelKey(from property: Property) -> ModelPropertyKey {
-        return property.name
-    }
-    
-    
-    required override init(){
-        
-    }
-    
-    
-}
 protocol Copyable: Codable {
     func clone() -> Self
 }
@@ -38,5 +25,20 @@ extension Copyable {
         }
         return target
     }
+    
+}
+
+
+class BaseModel: NSObject,Convertible {
+
+    func kj_modelKey(from property: Property) -> ModelPropertyKey {
+        return property.name
+    }
+    
+    
+    required override init(){
+        
+    }
+    
     
 }

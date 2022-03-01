@@ -85,6 +85,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         
+        
+        
+        print("==============我是分割线-开始练习WCDB.Swift===============")
+        
+        
+        WCDBUtil.share.connectDataBase()
+        
+        
         return true
     }
   
