@@ -68,7 +68,7 @@ class RequestResultModel<T: Convertible>: BaseModel {
     /// 把json解析成model
     func pasringModel() {
         // RequestStringModel 字符串数据不必再解析, 数据在data
-        guard !stringIsEmpty(string: data),
+        guard !stringIsEmpty(data),
               T.self != RequestStringModel.self else {
             return
         }

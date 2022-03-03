@@ -56,7 +56,7 @@ class MainTabbarVC: UITabBarController {
         let homeVc1 = ViewController.fromStoryboard(name: "Main")
        setupChildController(childVC: homeVc1, norImageName: "tabbar_btm_normal", selectedImageName: "tabbar_btm_selected", title: "BTM")
          
-        let homeVc2 = ViewController.fromStoryboard(name: "Main")
+        let homeVc2 = MeUserVc()
        setupChildController(childVC: homeVc2, norImageName: "tabbar_my_normal", selectedImageName: "tabbar_my_selected", title: "我的")
         
          

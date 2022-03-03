@@ -51,6 +51,9 @@
 		6444779C27C757500052EF56 /* HttpRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444779B27C757500052EF56 /* HttpRequestModel.swift */; };
 		6444779E27C75C6F0052EF56 /* EncryptUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444779D27C75C6F0052EF56 /* EncryptUtil.swift */; };
 		644477A027C76DEF0052EF56 /* InterfaceRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444779F27C76DEF0052EF56 /* InterfaceRequest.swift */; };
+		647E4F6627D0573000E2D695 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647E4F6527D0573000E2D695 /* NoDataView.swift */; };
+		647E4F6827D057D600E2D695 /* SBaseVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647E4F6727D057D600E2D695 /* SBaseVc.swift */; };
+		647E4F6A27D0638000E2D695 /* MeUserVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647E4F6927D0638000E2D695 /* MeUserVc.swift */; };
 		647E658A27C868E00088EE91 /* UIScrollView+Extend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647E658927C868DF0088EE91 /* UIScrollView+Extend.swift */; };
 		647E658E27C86A1B0088EE91 /* CustomRefreshHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647E658D27C86A1B0088EE91 /* CustomRefreshHeader.swift */; };
 		647E659027C86ABB0088EE91 /* RefreshLoading.json in Resources */ = {isa = PBXBuildFile; fileRef = 647E658F27C86ABB0088EE91 /* RefreshLoading.json */; };
@@ -111,6 +114,9 @@
 		6444779B27C757500052EF56 /* HttpRequestModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpRequestModel.swift; sourceTree = "<group>"; };
 		6444779D27C75C6F0052EF56 /* EncryptUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptUtil.swift; sourceTree = "<group>"; };
 		6444779F27C76DEF0052EF56 /* InterfaceRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceRequest.swift; sourceTree = "<group>"; };
+		647E4F6527D0573000E2D695 /* NoDataView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		647E4F6727D057D600E2D695 /* SBaseVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SBaseVc.swift; sourceTree = "<group>"; };
+		647E4F6927D0638000E2D695 /* MeUserVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeUserVc.swift; sourceTree = "<group>"; };
 		647E658927C868DF0088EE91 /* UIScrollView+Extend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIScrollView+Extend.swift"; sourceTree = "<group>"; };
 		647E658D27C86A1B0088EE91 /* CustomRefreshHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRefreshHeader.swift; sourceTree = "<group>"; };
 		647E658F27C86ABB0088EE91 /* RefreshLoading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RefreshLoading.json; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 				64BA18BF27C6295500580022 /* HomeColletionCell.swift */,
 				6444779027C632FC0052EF56 /* HomeTableCell.swift */,
 				6444779427C717150052EF56 /* CostomModel.swift */,
+				647E4F6927D0638000E2D695 /* MeUserVc.swift */,
 				6429D59827C4C61800CD1D83 /* Main.storyboard */,
 				6429D59B27C4C61C00CD1D83 /* Assets.xcassets */,
 				6429D59D27C4C61C00CD1D83 /* LaunchScreen.storyboard */,
@@ -230,9 +237,11 @@
 		6429D5DA27C5D38E00CD1D83 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				647E4F6527D0573000E2D695 /* NoDataView.swift */,
 				6429D5DB27C5D39700CD1D83 /* AlertVC.swift */,
 				64BA18B827C616F800580022 /* BaseNavigationController.swift */,
 				6444779227C716A50052EF56 /* BaseModel.swift */,
+				647E4F6727D057D600E2D695 /* SBaseVc.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -466,6 +475,8 @@
 				6444779827C7516A0052EF56 /* HttpRequestUntil.swift in Sources */,
 				6444779C27C757500052EF56 /* HttpRequestModel.swift in Sources */,
 				6429D5C727C5D02800CD1D83 /* NSObject+Extend.swift in Sources */,
+				647E4F6A27D0638000E2D695 /* MeUserVc.swift in Sources */,
+				647E4F6627D0573000E2D695 /* NoDataView.swift in Sources */,
 				64BA18BE27C61BD700580022 /* MainUtils.swift in Sources */,
 				6429D5AF27C5CFD200CD1D83 /* UIViewController+Extend.swift in Sources */,
 				644477A027C76DEF0052EF56 /* InterfaceRequest.swift in Sources */,
@@ -486,6 +497,7 @@
 				6444779127C632FC0052EF56 /* HomeTableCell.swift in Sources */,
 				6444779A27C752100052EF56 /* HttpEnum.swift in Sources */,
 				6429D5D827C5D02800CD1D83 /* UITableView+Extend.swift in Sources */,
+				647E4F6827D057D600E2D695 /* SBaseVc.swift in Sources */,
 				6429D5E627C6137100CD1D83 /* MainTabbarVC.swift in Sources */,
 				6429D5D627C5D02800CD1D83 /* UIFont+Extend.swift in Sources */,
 				6429D5C627C5D02800CD1D83 /* Dictionary+Extend.swift in Sources */,

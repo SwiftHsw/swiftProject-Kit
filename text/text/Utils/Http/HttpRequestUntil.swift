@@ -199,11 +199,11 @@ class HttpRequestUntil{
         for key in keys {
             guard var value = parameters?[key] else { continue }
             if let string = value as? String {
-                if stringIsEmpty(string: string) {
+                if stringIsEmpty(string) {
                     continue
                 }
             }
-            stringIsEmpty(string: str) ? nil : (str += "&")
+            stringIsEmpty(str) ? nil : (str += "&")
             if let valueStr = value as? String {
                 value = valueStr
             }
@@ -248,7 +248,7 @@ class HttpRequestUntil{
     private func parsingJson<T: Convertible>(_ json: [String: Any]) -> RequestResultModel<T> {
         
         let resultModel = json.kj.model(RequestResultModel<T>.self)
-        if stringIsEmpty(string: resultModel.data) {
+        if stringIsEmpty(resultModel.data) {
             return resultModel
         }
         

@@ -216,6 +216,21 @@ class ViewController: UIViewController {
             }
         }
         
+        
+//        for循环添加where语句，只有当where条件满足后才进入循环
+        let customWheres = ["1","2","3"]
+        for item in customWheres where item == "1"{
+            print("只有等于1 满足条件的时候才会进来")
+        }
+        
+        //字符串插值
+        let multplier = 3
+        let message = "\(multplier) + item 2.5 is \(Double(multplier) * 2.5)"
+        print(message)
+        
+        
+    
+        
     }
   
     

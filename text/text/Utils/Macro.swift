@@ -21,7 +21,7 @@ public func SLog<T>(_ message: T, file: String = #file, funcName: String = #func
 }
 
 /// 字符串是否为空
-public func stringIsEmpty(string:String?) -> Bool{
+public func stringIsEmpty(_ string:String?) -> Bool{
     return string?.isEmpty ?? true
 }
 
