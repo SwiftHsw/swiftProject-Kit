@@ -18,6 +18,48 @@ extension UITableView {
         return self.dequeueReusableCell(withIdentifier: T.className, for: indexPath) as! T
     }
     
+    /**
+      Register cell class
+      
+      - parameter aClass: class
+      */
+     func sw_registerHeaderFooterClass<T: UIView>(_ aClass: T.Type) {
+         let name = String(describing: aClass)
+         self.register(aClass, forHeaderFooterViewReuseIdentifier: name)
+     }
+     
+    func sw_registerHeaderFooterNib<T: UIView>(_ aClass: T.Type) {
+           let name = String(describing: aClass)
+           let nib = UINib(nibName: name, bundle: nil)
+           self.register(nib, forHeaderFooterViewReuseIdentifier: name)
+       }
+    
+    
+     /**
+      Reusable Cell
+      
+      - parameter aClass:    class
+      
+      - returns: cell
+      */
+     func sw_dequeueReusableHeaderFooter<T: UIView>(_ aClass: T.Type) -> T! {
+         let name = String(describing: aClass)
+         guard let cell = dequeueReusableHeaderFooterView(withIdentifier: name) as? T else {
+             fatalError("\(name) is not registed")
+         }
+         return cell
+     }
+    
+   /**
+       Register cell class
+       
+       - parameter aClass: class
+       */
+      func sw_registerCellClass<T: UITableViewCell>(_ aClass: T.Type) {
+          let name = String(describing: aClass)
+          self.register(aClass, forCellReuseIdentifier: name)
+      }
+    
 }
 
 // MARK: - UICollectionView

@@ -17,11 +17,15 @@ class SBaseVc: UIViewController , BaseNavigationControllerDelegate {
     var isBackgroundClear = false
     
     ///返回按钮的颜色
-    var backBtnType: NavBackBtnType = .black
+    var backBtnType: NavBackBtnType{
+        return .black
+    }
     
     
     ///导航栏背景颜色
-    var barTintColor : UIColor = .white
+    var barTintColor : UIColor{
+        return  .white
+    }
     
     /// 导航栏按钮颜色
     var tintColor : UIColor{
@@ -112,15 +116,11 @@ class SBaseVc: UIViewController , BaseNavigationControllerDelegate {
         
         guard topMargin == 0 else {
             noDataView.frame = CGRect(x: 0, y: topMargin, width: noDataView.view_width, height: noDataView.view_height)
+            superView.addSubview(noDataView)
             return
         }
         noDataView.center = superView.center
-        
-        if noDataView.superview == nil{
-            superView.addSubview(noDataView)
-        }
-         
-        
+        superView.addSubview(noDataView)
     }
     
     // 隐藏占位图

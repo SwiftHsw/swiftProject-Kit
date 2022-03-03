@@ -144,7 +144,7 @@ class BaseNavigationController: UINavigationController,UINavigationControllerDel
     
     
     @objc func popAction(){
-        if let topVc = self.topViewController as? BaseNavigationController{
+        if let topVc = self.topViewController as? BaseNavigationControllerDelegate{
             topVc.popAction()
         }
     }
