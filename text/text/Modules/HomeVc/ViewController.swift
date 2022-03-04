@@ -234,6 +234,13 @@ class ViewController: UIViewController {
     }
   
     
+    @IBAction func pushToQRAnmitionVcAction(_ sender: Any) {
+    
+        let vc = QRAnmitionVc.fromStoryboard(name: "Main")
+        self.pushViewController(vc: vc)
+        
+        
+    }
     
     
     public func getwcdbList() -> Promise<[sampleModel]>{

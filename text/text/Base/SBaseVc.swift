@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import PromiseKit
 
 class SBaseVc: UIViewController , BaseNavigationControllerDelegate {
     
@@ -183,6 +184,17 @@ extension SBaseVc {
 
 extension SBaseVc{
     
+    func sPush(_ vc:SBaseVc, isRemoverSelf : Bool = false,vcBlock: BlockWithParameters<SBaseVc>? = nil){
+      
+        if isRemoverSelf{
+            removeSelf(vc)
+        }
+      
+        vcBlock?(vc)
+         
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
     ///跳转到指定界面，不返回VC
     func sPush(name:String,identifer:String,isRemoveSelf:Bool = false){
         
@@ -197,6 +209,7 @@ extension SBaseVc{
     }
     
    
+  
     ///跳转到指定界面，返回VC
     
     func sPush<T>(name:String,identifer:String,isRemoveSelf:Bool = false, vcBlock:BlockWithParameters<T>? = nil) {

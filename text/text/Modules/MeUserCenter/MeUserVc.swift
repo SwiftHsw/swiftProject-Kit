@@ -15,11 +15,9 @@ class MeUserVc: SBaseVc {
     @IBOutlet weak var navTitle: UILabel!
     @IBOutlet weak var tableV: UITableView!
     @IBOutlet weak var navHeight: NSLayoutConstraint!
-    
-    
+
     let dataSource : [[String]] = [["交易记录","地址簿","钱包管理","商家入驻","计价单位"],["设定","帮助与反馈","关于我们","版本更新"]]
-    
-     
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,6 +38,11 @@ class MeUserVc: SBaseVc {
         
         sPush(name: "Main", identifer: UserInfoVc.className) { (vc: UserInfoVc) in
              
+        }
+        
+       
+        sPush(SBaseVc()){ (vc :SBaseVc) in
+            vc.title = "测试标题"
         }
         
     }
