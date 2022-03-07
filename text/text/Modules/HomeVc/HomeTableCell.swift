@@ -11,6 +11,14 @@ class HomeTableCell: UITableViewCell {
 
     @IBOutlet weak var titleLable: UILabel!
     @IBOutlet weak var dertailable: UILabel!
+    var model : sampleModel? {
+        didSet{
+            dertailable.text = model?.from
+        }
+        willSet{
+            print("willSet ===\(model?.from)")
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

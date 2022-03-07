@@ -25,7 +25,8 @@ class secondViewC: AlertVC {
         self.view.backgroundColor = .white
         self.tableV.register(secondViewCell.self)
         self.tableV.rowHeight = 50
-      
+        tableV.tableFooterView = UIView()
+        
     }
     
     @IBAction func ationBlock(_ sender: Any) {
@@ -53,10 +54,10 @@ extension secondViewC {
     
     
     override func longFormHeight() -> PanModalHeight {
-        return PanModalHeight(type: .content, height: 400)
+        return PanModalHeight(type: .content, height:  ScreenHeight*0.7)
     }
     override func shortFormHeight() -> PanModalHeight {
-        return PanModalHeight(type: .content, height: 200)
+        return PanModalHeight(type: .content, height: ScreenHeight*0.4)
     }
     
     override func showDragIndicator() -> Bool {
@@ -77,7 +78,6 @@ extension secondViewC : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withType: secondViewCell.self, for: indexPath)
-//        cell.backgroundColor = UIColor.randomColor()
         let text = self.customsData[indexPath.row]
         cell.tileName.text = text
         return cell
@@ -85,6 +85,7 @@ extension secondViewC : UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
          
+        tableView.deselectRow(at: indexPath, animated: true)
         didselectBlock?(indexPath)
         
         

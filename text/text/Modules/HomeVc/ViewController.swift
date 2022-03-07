@@ -167,7 +167,7 @@ class ViewController: UIViewController {
         
         
         
-        
+        loadData()
         FanXingCutom()
         
          
@@ -196,26 +196,7 @@ class ViewController: UIViewController {
         
         print("增加一个model")
          WCDBUtil.share.insertObject([model,model2], tableName: TABLENAME_sampleModel)
-     
-        
-        getwcdbList().done { relust in
-            print("查询到该表的所有数据\(relust)")
-
-            guard  relust.count>0 else{return}
-            self.datas = relust
-            self.listTable.reloadData()
-            self.tableViewHeight.constant = CGFloat(relust.count*80)
-            
-        }.catch { (error) in
-            print("执行失败了\(error)")
-        }.finally {
-            print("执行完成")
-            
-            after(seconds: 2).done{
-                print("延时刷新下UI")
-            }
-        }
-        
+      
         
 //        for循环添加where语句，只有当where条件满足后才进入循环
         let customWheres = ["1","2","3"]
@@ -242,6 +223,30 @@ class ViewController: UIViewController {
         
     }
     
+    func loadData(){
+        getwcdbList().done { relust in
+            print("查询到该表的所有数据\(relust)")
+
+            guard  relust.count>0 else{return}
+            self.datas = relust
+            self.listTable.reloadData()
+            self.tableViewHeight.constant = CGFloat(relust.count*80)
+            
+        }.catch { (error) in
+            print("执行失败了\(error)")
+        }.finally {
+            print("执行完成")
+            
+            after(seconds: 1).done{
+                print("延时刷新下UI")
+                self.datas.append(sampleModel(amount: "100", from: "自定义from1", type: 1))
+                self.datas.append(sampleModel(amount: "101", from: "自定义from2", type: 2))
+                self.datas.append(sampleModel(amount: "102", from: "自定义from3", type: 3))
+                self.tableViewHeight.constant = CGFloat(self.datas.count*80)
+                self.listTable.reloadData()
+            }
+        }
+    }
     
     public func getwcdbList() -> Promise<[sampleModel]>{
         return Promise<[sampleModel]> { (reslover) in
@@ -325,7 +330,7 @@ class ViewController: UIViewController {
     
     @objc func headerMjRefres(){
          SLog("开始刷新")
-        
+        loadData()
         after(seconds:3).done{ [weak self] in
             self?.mainScrollView.mj_header?.endRefreshing()
          }
@@ -411,7 +416,7 @@ extension ViewController:UITableViewDelegate,UITableViewDataSource{
         
         let cell = tableView.dequeueReusableCell(withType: HomeTableCell.self, for: indexPath)
         let model = datas[indexPath.row]
-        cell.dertailable?.text = model.from
+        cell.model = model
         cell.selectionStyle = .none
         return cell
         

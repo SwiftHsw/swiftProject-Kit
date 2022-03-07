@@ -111,7 +111,12 @@ class QRAnmitionVc: SBaseVc {
     private func loadSession(){
         
         DispatchQueue.global().async {
-             
+              
+            // 3秒后更改提示
+            after(seconds: 3).done{ [weak self] in
+                self?.tipsLable.text = "请对准二维码，耐心等待"
+            }
+            
             // 捕捉设备
             guard let device = AVCaptureDevice.default(for: .video) else {
                 print("捕捉设备失败")
@@ -151,11 +156,7 @@ class QRAnmitionVc: SBaseVc {
                 
                 // 启动会话
                 self.session.startRunning()
-                
-                // 3秒后更改提示
-                after(seconds: 3).done{ [weak self] in
-                    self?.tipsLable.text = "请对准二维码，耐心等待"
-                }
+               
             }
         }
     }
