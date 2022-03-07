@@ -13,7 +13,7 @@ class secondViewC: AlertVC {
  
     var didselectBlock : BlockWithParameters<IndexPath>?
     lazy var customsData: [String] = {
-        let arr = ["ETH","BTC","USDT","TRX"]
+        let arr = ["ETH","BTC","USDT","TRX","ETH","BTC","USDT","TRX","ETH","BTC","USDT","TRX"]
         return arr
     }()
     
@@ -67,6 +67,11 @@ extension secondViewC {
     override func cornerRadius() -> CGFloat {
         return 15
     }
+    
+    override func panScrollable() -> UIScrollView? {
+        return tableV
+    }
+    
 }
 
 
