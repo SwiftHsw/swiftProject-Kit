@@ -53,8 +53,8 @@ class MainTabbarVC: UITabBarController {
         homeVc.title = "首页"
        setupChildController(childVC: homeVc, norImageName: "tabbar_wallet_normal", selectedImageName: "tabbar_wallet_selected", title: "首页")
          
-        let homeVc1 = ViewController.fromStoryboard(name: "Main")
-       setupChildController(childVC: homeVc1, norImageName: "tabbar_btm_normal", selectedImageName: "tabbar_btm_selected", title: "BTM")
+        let homeVc1 = GoolegeVC.fromStoryboard(name: "Main")
+       setupChildController(childVC: homeVc1, norImageName: "tabbar_btm_normal", selectedImageName: "tabbar_btm_selected", title: "谷歌")
          
         let homeVc2 = MeUserVc.fromStoryboard(name: "Main")
        setupChildController(childVC: homeVc2, norImageName: "tabbar_my_normal", selectedImageName: "tabbar_my_selected", title: "我的")

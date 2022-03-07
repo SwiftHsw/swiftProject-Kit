@@ -457,6 +457,83 @@
             </objects>
             <point key="canvasLocation" x="82.608695652173921" y="729.91071428571422"/>
         </scene>
+        <!--GoolegeVC-->
+        <scene sceneID="0zK-dh-Hr9">
+            <objects>
+                <viewController storyboardIdentifier="GoolegeVC" id="SDe-Mg-KGO" customClass="GoolegeVC" customModule="text" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="USq-mH-h3K">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DhO-MS-D8v" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vyY-gH-kjH">
+                                <rect key="frame" x="249" y="44" width="150" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="FbB-vT-neL"/>
+                                    <constraint firstAttribute="width" constant="150" id="IRT-bM-kbU"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="LmD-x5-nQc"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="64" id="Vn0-gN-Nz7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="6"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title=" 附近的BTM" image="btm_navigation_black" backgroundImage="btm_nearby">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qp4-vS-jBM">
+                                <rect key="frame" x="68" y="782" width="278" height="50"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.2156862745" blue="0.38823529410000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="GCr-PV-Wbw"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="tal-Td-oPm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="扫码取款">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="btm_sign" translatesAutoresizingMaskIntoConstraints="NO" id="fce-a2-2ov">
+                                <rect key="frame" x="196.5" y="429.5" width="21" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="Wmw-Gm-w1l"/>
+                                    <constraint firstAttribute="width" constant="21" id="haL-2Z-0PT"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wSE-31-HVq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wSE-31-HVq" firstAttribute="trailing" secondItem="vyY-gH-kjH" secondAttribute="trailing" constant="15" id="822-0e-w2i"/>
+                            <constraint firstItem="fce-a2-2ov" firstAttribute="centerY" secondItem="USq-mH-h3K" secondAttribute="centerY" id="D8v-ou-6Bz"/>
+                            <constraint firstItem="DhO-MS-D8v" firstAttribute="trailing" secondItem="wSE-31-HVq" secondAttribute="trailing" id="F0B-uw-8r9"/>
+                            <constraint firstItem="fce-a2-2ov" firstAttribute="centerX" secondItem="USq-mH-h3K" secondAttribute="centerX" id="TXe-W5-iXl"/>
+                            <constraint firstItem="wSE-31-HVq" firstAttribute="bottom" secondItem="qp4-vS-jBM" secondAttribute="bottom" constant="30" id="anD-Uz-pvo"/>
+                            <constraint firstItem="DhO-MS-D8v" firstAttribute="top" secondItem="USq-mH-h3K" secondAttribute="top" id="dhn-Ri-FfT"/>
+                            <constraint firstItem="qp4-vS-jBM" firstAttribute="leading" secondItem="wSE-31-HVq" secondAttribute="leading" constant="68" id="eWU-fX-Zd2"/>
+                            <constraint firstItem="vyY-gH-kjH" firstAttribute="top" secondItem="wSE-31-HVq" secondAttribute="top" id="fuz-kL-1ZN"/>
+                            <constraint firstAttribute="bottom" secondItem="DhO-MS-D8v" secondAttribute="bottom" id="lLy-1B-jXc"/>
+                            <constraint firstItem="wSE-31-HVq" firstAttribute="trailing" secondItem="qp4-vS-jBM" secondAttribute="trailing" constant="68" id="mcy-PU-jaY"/>
+                            <constraint firstItem="DhO-MS-D8v" firstAttribute="leading" secondItem="wSE-31-HVq" secondAttribute="leading" id="vbP-cp-k1s"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="DhO-MS-D8v" id="MP2-QH-JvS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7U4-lB-23f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="879.71014492753625" y="729.91071428571422"/>
+        </scene>
         <!--Second ViewC-->
         <scene sceneID="ZcL-15-2Uf">
             <objects>
@@ -875,6 +952,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="btm_navigation_black" width="16" height="16"/>
+        <image name="btm_nearby" width="131" height="56"/>
+        <image name="btm_sign" width="21" height="37"/>
         <image name="home_wallet_bg" width="224" height="127"/>
         <image name="scan_border" width="286" height="286"/>
         <image name="scan_close" width="54" height="54"/>

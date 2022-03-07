@@ -7,6 +7,7 @@
 
 import UIKit
 import KakaJSON
+import GoogleMaps
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,7 +24,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
      
         self.setupLocalDefaultConfig()
-  
+        
+        //配置谷歌key
+        
+        GMSServices.provideAPIKey("AIzaSyDutNWAJFPrjMkWYXi1j76Z72Z0epLSDqQ")
         
         //设置tabbar 为跟试图
         MainUtils.shareUtil.loadMainTabbar()
