@@ -23,7 +23,7 @@ class MainTabbarVC: UITabBarController {
     private func setupTabbar(){
         if #available(iOS 13.0, *) {
             let tabBarAppearance = UITabBarAppearance()
-            tabBarAppearance.shadowImage = UIImage(color: UIColor("#F3F3F4"), size: CGSize(width: ScreenWidth, height: 1))
+            tabBarAppearance.shadowImage = UIImage(color: UIColor("#FFFFFF"), size: CGSize(width: ScreenWidth, height: 1))
             tabBarAppearance.backgroundImage = nil
             tabBarAppearance.backgroundColor = UIColor.white
             tabBarAppearance.stackedLayoutAppearance.normal.titleTextAttributes = [.foregroundColor : ColorB5C8D8]
@@ -32,21 +32,18 @@ class MainTabbarVC: UITabBarController {
             if #available(iOS 15.0, *) {
                 tabBar.scrollEdgeAppearance = tabBarAppearance
             }
+           
         } else {
-            tabBar.shadowImage = UIImage(color: UIColor("#F3F3F4"), size: CGSize(width: ScreenWidth, height: 1))
-            tabBar.backgroundImage = nil
+            //去掉黑色线条
+            tabBar.shadowImage = UIImage()
+            tabBar.backgroundImage = UIImage()
             tabBar.backgroundColor = UIColor.white
             tabBar.barTintColor = UIColor.white
             UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor : ColorB5C8D8], for: .normal)
             UITabBarItem.appearance().setTitleTextAttributes([.foregroundColor : Color3583E1], for: .selected)
         }
-        
-      
-        
     }
-    
-    
-    
+   
     private func  setupViewControllers(){
         
         let homeVc = ViewController.fromStoryboard(name: "Main")

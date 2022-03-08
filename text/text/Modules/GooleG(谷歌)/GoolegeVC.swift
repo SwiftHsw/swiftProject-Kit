@@ -17,6 +17,8 @@ class GoolegeVC: SBaseVc  {
     var currentCenter: CLLocationCoordinate2D?
     var isRequest = false
     var circle: GMSCircle?
+    var btmMarkers: [GMSMarker] = []
+    
     var selectMarker: GMSMarker? {
         didSet {
            print("选中某一个大头针")
@@ -79,8 +81,30 @@ class GoolegeVC: SBaseVc  {
         isRequest = true
         
         //传入当前经纬度 获取大头针标注
-          let details: [BTMDetailModel] = []
+        var details: [BTMDetailModel] = []
+        //ptional(118.1779224504533) 获取到纬度: Optional(24.511820803250203)
+        let model1 = BTMDetailModel()
+        model1.lat = "118.1779224504534"
+        model1.lon = "24.511820803250202"
+        details.append(model1)
         
+        let model2 = BTMDetailModel()
+        model2.lat = "118.1779224504535"
+        model2.lon = "24.511820803250201"
+        details.append(model2)
+        
+        let model3 = BTMDetailModel()
+        model3.lat = "118.1779224504536"
+        model3.lon = "24.511820803250202"
+        details.append(model3)
+        
+        
+        let model4 = BTMDetailModel()
+        model4.lat = "118.1779224504536"
+        model4.lon = "24.511820803250201"
+        details.append(model4)
+        
+         
         
         self.setupMarkers(details: details)
         
@@ -100,24 +124,26 @@ class GoolegeVC: SBaseVc  {
         
         //绘制 这个 GMSMarker 多个对象
         // 筛选GMSMarker
-//        var tempMarkers: [GMSMarker] = []
-//        for detail in details {
+        var tempMarkers: [GMSMarker] = []
+        for detail in details {
 //            let filter = btmMarkers.filter { marker in
 //                let detailModel = marker.userData as? BTMDetailModel
 //                return detailModel?.pic == detail.pic
 //            }
-//            if arrayIsEmpty(arr: filter), let lat = Double(detail.lat), let lon = Double(detail.lon) {
-//                let marker = GMSMarker()
-//                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lon)
-//                let iconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 48, height: 52))
-//                iconView.image = UIImage(named: detail.annotationImgName)
-//                marker.iconView = iconView
-//                marker.userData = detail
-//                marker.map = mapView
-//                tempMarkers.append(marker)
+            let lat = Double(detail.lat) ?? 0
+            let lon = Double(detail.lon) ?? 0
+//            if arrayIsEmpty(arr: details), let lat = Double(detail.lat), let lon = Double(detail.lon) {
+                let marker = GMSMarker()
+                marker.position = CLLocationCoordinate2D(latitude: lat, longitude: lon)
+                let iconView = UIImageView(frame: CGRect(x: 0, y: 0, width: 48, height: 52))
+                iconView.image = UIImage(named: detail.annotationImgName)
+                marker.iconView = iconView
+                marker.userData = detail
+                marker.map = mapView
+                tempMarkers.append(marker)
 //            }
-//        }
-//        btmMarkers.append(contentsOf: tempMarkers)
+        }
+        btmMarkers.append(contentsOf: tempMarkers)
     }
     
     func updatePermissionShow(){
@@ -200,9 +226,51 @@ extension GoolegeVC : GMSMapViewDelegate{
     
 }
 
-class BTMDetailModel:BaseModel{
+class BTMDetailModel:BaseModel,Copyable{
     
+    /// 封面
+    var cover = ""
+    /// btm地址
+    var address = ""
+    /// 联系人名称
+    var contactPerson = ""
+    /// facebook
+    var facebook = ""
+    /// 电报
+    var telegram = ""
+    /// 安装工作站
+    var whatsapp = ""
+    /// 距离
+    var distanceCompany = ""
+    /// 开始营业时间（00:00）
+    var startTime = ""
+    /// 结束营业时间（24:00）
+    var endTime = ""
+    /// 纬度
+    var lat = ""
+    /// 经度
+    var lon = ""
+    /// btm商户名称
+    var name = ""
+    /// 图片
+    var pic = ""
+    /// 是否可取款 0否 1是
+    var status = false
     
+    // MARK: - 本地使用
+    
+    var isSelect = false
+    
+    var annotationImgName: String {
+        return isSelect ? "btm_annotation_select" : "btm_annotation"
+    }
+    
+    var imageStrs: [String] {
+        if stringIsEmpty(pic) {
+            return []
+        }
+        return pic.components(separatedBy: ",")
+    }
     
     
 }
