@@ -347,6 +347,7 @@ PODS:
   - BoringSSL-GRPC/Interface (0.0.7)
   - CRBoxInputView (1.2.2):
     - Masonry
+  - CryptoSwift (1.4.3)
   - Firebase/Analytics (8.8.0):
     - Firebase/Core
   - Firebase/Auth (8.8.0):
@@ -485,6 +486,7 @@ PODS:
     - gRPC-Core/Interface (= 1.28.2)
   - gRPC-Core/Interface (1.28.2)
   - GTMSessionFetcher/Core (1.7.0)
+  - HEPhotoPicker (0.0.8)
   - HWPanModal (0.6.7)
   - IQKeyboardManagerSwift (6.5.9)
   - JXPagingView/Paging (2.0.13)
@@ -517,6 +519,7 @@ PODS:
   - SwiftyRSA (1.5.0):
     - SwiftyRSA/ObjC (= 1.5.0)
   - SwiftyRSA/ObjC (1.5.0)
+  - TZImagePickerController (3.7.6)
   - WCDB.swift (1.0.8.2):
     - SQLiteRepairKit (~> 1.2.0)
     - WCDBOptimizedSQLCipher (~> 1.2.0)
@@ -528,12 +531,14 @@ PODS:
 DEPENDENCIES:
   - Alamofire (= 5.4.4)
   - CRBoxInputView (= 1.2.2)
+  - CryptoSwift (>= 0.10.0)
   - Firebase/Analytics (= 8.8.0)
   - Firebase/Auth (= 8.8.0)
   - Firebase/Firestore (= 8.8.0)
   - FSPagerView (= 0.8.3)
   - GoogleMaps (= 6.0.1)
   - GooglePlaces (= 6.0.0)
+  - HEPhotoPicker (from `../`)
   - HWPanModal (= 0.6.7)
   - IQKeyboardManagerSwift (= 6.5.9)
   - JXPagingView/Paging (= 2.0.13)
@@ -546,6 +551,7 @@ DEPENDENCIES:
   - SKPhotoBrowser (= 7.0.0)
   - SnapKit (= 5.0.1)
   - SwiftyRSA (= 1.5.0)
+  - TZImagePickerController
   - WCDB.swift (= 1.0.8.2)
   - ZLPhotoBrowser (= 4.1.9)
 
@@ -555,6 +561,7 @@ SPEC REPOS:
     - Alamofire
     - BoringSSL-GRPC
     - CRBoxInputView
+    - CryptoSwift
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -588,15 +595,21 @@ SPEC REPOS:
     - SnapKit
     - SQLiteRepairKit
     - SwiftyRSA
+    - TZImagePickerController
     - WCDB.swift
     - WCDBOptimizedSQLCipher
     - ZLPhotoBrowser
+
+EXTERNAL SOURCES:
+  HEPhotoPicker:
+    :path: "../"
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
   CRBoxInputView: 2380c292aabbf786fe923776f111ba3053438fba
+  CryptoSwift: a0799ee936271bd2253a006f1e4523df21845000
   Firebase: 629510f1a9ddb235f3a7c5c8ceb23ba887f0f814
   FirebaseAnalytics: 5506ea8b867d8423485a84b4cd612d279f7b0b8a
   FirebaseAuth: bcf0adeff88bda5dcb3beeabe5760f1226ab7b2f
@@ -613,6 +626,7 @@ SPEC CHECKSUMS:
   "gRPC-C++": 13d8ccef97d5c3c441b7e3c529ef28ebee86fad2
   gRPC-Core: 4afa11bfbedf7cdecd04de535a9e046893404ed5
   GTMSessionFetcher: 43748f93435c2aa068b1cbe39655aaf600652e91
+  HEPhotoPicker: 52831f8db5f3cd4b47925968cdb06131549b007f
   HWPanModal: 8ce3489c30e2268dafc50acdcde50d34f75f35aa
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
   JXPagingView: 821ed274f09eaf2843a96c3a74e9d138e27d9730
@@ -630,10 +644,11 @@ SPEC CHECKSUMS:
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
   SQLiteRepairKit: 35aaae5a8838adb85f5b1eb4d796055be6060a4b
   SwiftyRSA: 6e528fb1b1a87d5111c48081083b141d6d65f1cf
+  TZImagePickerController: fb446ac06ae9c217bc849185646a68465bcd0dd4
   WCDB.swift: 05d509d7a0e60fb6e11c34eb7e4027c0fab5849f
   WCDBOptimizedSQLCipher: baf44493b0c7a3d49e97bc5b64a3856f6428ddd1
   ZLPhotoBrowser: 320aec37f64b0f58d40abd852956c64530011ea4
 
-PODFILE CHECKSUM: 89072881fe9a0fa289fc6b36492f7e278ffe0a47
+PODFILE CHECKSUM: 57395bff258211db0b547656fb236336ecfd7a4f
 
 COCOAPODS: 1.11.2

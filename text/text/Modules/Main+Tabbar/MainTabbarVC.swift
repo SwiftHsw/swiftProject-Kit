@@ -56,7 +56,9 @@ class MainTabbarVC: UITabBarController {
         let homeVc2 = MeUserVc.fromStoryboard(name: "Main")
        setupChildController(childVC: homeVc2, norImageName: "tabbar_my_normal", selectedImageName: "tabbar_my_selected", title: "我的")
         
-         
+        let homeVc3 = ReleseVc.fromStoryboard(name: "Main")
+       setupChildController(childVC: homeVc3, norImageName: "tabbar_my_normal", selectedImageName: "tabbar_my_selected", title: "发布")
+        
     }
     // addChild
     private func setupChildController(childVC: UIViewController, norImageName: String, selectedImageName: String, title: String) {

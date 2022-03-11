@@ -20,6 +20,7 @@ class UserInfoVc: SBaseTableViewVC {
         title = "个人信息"
         userId.text = "3922871"
         userName.text = "用户昵称9岁"
+        self.barTintColor = .clear
     }
  
 }

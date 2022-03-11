@@ -107,6 +107,15 @@ extension MeUserVc : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
  
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+         let vc = createVC(name: "Main", identifier: SPublicVC.className)
+        let nav = BaseNavigationController.init(rootViewController: vc)
+        
+        nav.modalPresentationStyle = .fullScreen
+        
+        self.present(nav, animated: true, completion: nil )
+        
         switch (indexPath.section,indexPath.row){
             
         case (0,0):

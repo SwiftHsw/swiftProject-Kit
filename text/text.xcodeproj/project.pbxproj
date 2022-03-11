@@ -11,6 +11,7 @@
 		6403862627CDED0900316B09 /* sampleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6403862527CDED0900316B09 /* sampleModel.swift */; };
 		640EFB3927D5A38C006BA04A /* GoolegeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640EFB3827D5A38C006BA04A /* GoolegeVC.swift */; };
 		6414455527D5AB6300E0D31B /* LocationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6414455427D5AB6200E0D31B /* LocationUtil.swift */; };
+		6414DE1127D881CA00059C44 /* ReleseVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6414DE1027D881CA00059C44 /* ReleseVc.swift */; };
 		6429D59327C4C61800CD1D83 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429D59227C4C61800CD1D83 /* AppDelegate.swift */; };
 		6429D59727C4C61800CD1D83 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429D59627C4C61800CD1D83 /* ViewController.swift */; };
 		6429D59A27C4C61800CD1D83 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6429D59827C4C61800CD1D83 /* Main.storyboard */; };
@@ -45,6 +46,28 @@
 		6429D5E227C5DAF400CD1D83 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429D5E127C5DAF400CD1D83 /* Macro.swift */; };
 		6429D5E627C6137100CD1D83 /* MainTabbarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429D5E527C6137100CD1D83 /* MainTabbarVC.swift */; };
 		6429D5E927C6141500CD1D83 /* UIColorName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6429D5E827C6141500CD1D83 /* UIColorName.swift */; };
+		64434DA927D987FD00C34E9C /* SPublicVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DA827D987FD00C34E9C /* SPublicVC.swift */; };
+		64434DAC27D98E0000C34E9C /* uploadImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DAA27D98E0000C34E9C /* uploadImageCell.swift */; };
+		64434DAD27D98E0000C34E9C /* uploadImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64434DAB27D98E0000C34E9C /* uploadImageCell.xib */; };
+		64434DB027D98E1400C34E9C /* addImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DAE27D98E1400C34E9C /* addImageCell.swift */; };
+		64434DB127D98E1400C34E9C /* addImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64434DAF27D98E1400C34E9C /* addImageCell.xib */; };
+		64434DB327D9C5B300C34E9C /* sVideoRecordingVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DB227D9C5B300C34E9C /* sVideoRecordingVc.swift */; };
+		64434DC527D9C6AD00C34E9C /* WMCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 64434DB527D9C6AD00C34E9C /* WMCameraResource.bundle */; };
+		64434DC627D9C6AD00C34E9C /* WMVideoPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DB627D9C6AD00C34E9C /* WMVideoPlayer.swift */; };
+		64434DC727D9C6AD00C34E9C /* WMVideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DB727D9C6AD00C34E9C /* WMVideoEditor.swift */; };
+		64434DC827D9C6AD00C34E9C /* Bundle+Extension(wm).swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DB927D9C6AD00C34E9C /* Bundle+Extension(wm).swift */; };
+		64434DC927D9C6AD00C34E9C /* WMCameraFileTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DBA27D9C6AD00C34E9C /* WMCameraFileTools.swift */; };
+		64434DCA27D9C6AD00C34E9C /* WMVideoTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DBB27D9C6AD00C34E9C /* WMVideoTools.swift */; };
+		64434DCB27D9C6AD00C34E9C /* UIView+Extension(WM).swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DBC27D9C6AD00C34E9C /* UIView+Extension(WM).swift */; };
+		64434DCC27D9C6AD00C34E9C /* Timer+Extension(wm).swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DBD27D9C6AD00C34E9C /* Timer+Extension(wm).swift */; };
+		64434DCD27D9C6AD00C34E9C /* UIImage+Extension(wm).swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DBE27D9C6AD00C34E9C /* UIImage+Extension(wm).swift */; };
+		64434DCE27D9C6AD00C34E9C /* WMCameraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DBF27D9C6AD00C34E9C /* WMCameraViewController.swift */; };
+		64434DCF27D9C6AD00C34E9C /* WMVideoExporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DC027D9C6AD00C34E9C /* WMVideoExporter.swift */; };
+		64434DD027D9C6AD00C34E9C /* WMCameraControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DC127D9C6AD00C34E9C /* WMCameraControl.swift */; };
+		64434DD127D9C6AD00C34E9C /* WMCameraManger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DC227D9C6AD00C34E9C /* WMCameraManger.swift */; };
+		64434DD227D9C6AD00C34E9C /* WMDeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DC327D9C6AD00C34E9C /* WMDeviceOrientation.swift */; };
+		64434DD327D9C6AD00C34E9C /* WMImageRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DC427D9C6AD00C34E9C /* WMImageRotate.swift */; };
+		64434DD527D9D68900C34E9C /* WMNavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64434DD427D9D68800C34E9C /* WMNavView.swift */; };
 		6444779127C632FC0052EF56 /* HomeTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444779027C632FC0052EF56 /* HomeTableCell.swift */; };
 		6444779327C716A50052EF56 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444779227C716A50052EF56 /* BaseModel.swift */; };
 		6444779527C717150052EF56 /* CostomModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6444779427C717150052EF56 /* CostomModel.swift */; };
@@ -68,6 +91,8 @@
 		64BA18BC27C6178300580022 /* UIEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BA18BB27C6178300580022 /* UIEnum.swift */; };
 		64BA18BE27C61BD700580022 /* MainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BA18BD27C61BD700580022 /* MainUtils.swift */; };
 		64BA18C127C6295500580022 /* HomeColletionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BA18BF27C6295500580022 /* HomeColletionCell.swift */; };
+		64C12CD127DAF062002F44A2 /* SVideoEditVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C12CCF27DAF062002F44A2 /* SVideoEditVc.swift */; };
+		64C12CD227DAF062002F44A2 /* SVideoEditVc.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64C12CD027DAF062002F44A2 /* SVideoEditVc.xib */; };
 		AD69CE9084F74F9EE63C1158 /* Pods_text.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C911B884AE13DC486C7E4D0 /* Pods_text.framework */; };
 /* End PBXBuildFile section */
 
@@ -78,6 +103,7 @@
 		6403862527CDED0900316B09 /* sampleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sampleModel.swift; sourceTree = "<group>"; };
 		640EFB3827D5A38C006BA04A /* GoolegeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoolegeVC.swift; sourceTree = "<group>"; };
 		6414455427D5AB6200E0D31B /* LocationUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationUtil.swift; sourceTree = "<group>"; };
+		6414DE1027D881CA00059C44 /* ReleseVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReleseVc.swift; sourceTree = "<group>"; };
 		6429D58F27C4C61800CD1D83 /* text.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = text.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6429D59227C4C61800CD1D83 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6429D59627C4C61800CD1D83 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +140,28 @@
 		6429D5E127C5DAF400CD1D83 /* Macro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		6429D5E527C6137100CD1D83 /* MainTabbarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarVC.swift; sourceTree = "<group>"; };
 		6429D5E827C6141500CD1D83 /* UIColorName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorName.swift; sourceTree = "<group>"; };
+		64434DA827D987FD00C34E9C /* SPublicVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SPublicVC.swift; sourceTree = "<group>"; };
+		64434DAA27D98E0000C34E9C /* uploadImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = uploadImageCell.swift; sourceTree = "<group>"; };
+		64434DAB27D98E0000C34E9C /* uploadImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = uploadImageCell.xib; sourceTree = "<group>"; };
+		64434DAE27D98E1400C34E9C /* addImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addImageCell.swift; sourceTree = "<group>"; };
+		64434DAF27D98E1400C34E9C /* addImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = addImageCell.xib; sourceTree = "<group>"; };
+		64434DB227D9C5B300C34E9C /* sVideoRecordingVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sVideoRecordingVc.swift; sourceTree = "<group>"; };
+		64434DB527D9C6AD00C34E9C /* WMCameraResource.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = WMCameraResource.bundle; sourceTree = "<group>"; };
+		64434DB627D9C6AD00C34E9C /* WMVideoPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMVideoPlayer.swift; sourceTree = "<group>"; };
+		64434DB727D9C6AD00C34E9C /* WMVideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMVideoEditor.swift; sourceTree = "<group>"; };
+		64434DB927D9C6AD00C34E9C /* Bundle+Extension(wm).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension(wm).swift"; sourceTree = "<group>"; };
+		64434DBA27D9C6AD00C34E9C /* WMCameraFileTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMCameraFileTools.swift; sourceTree = "<group>"; };
+		64434DBB27D9C6AD00C34E9C /* WMVideoTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMVideoTools.swift; sourceTree = "<group>"; };
+		64434DBC27D9C6AD00C34E9C /* UIView+Extension(WM).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension(WM).swift"; sourceTree = "<group>"; };
+		64434DBD27D9C6AD00C34E9C /* Timer+Extension(wm).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Timer+Extension(wm).swift"; sourceTree = "<group>"; };
+		64434DBE27D9C6AD00C34E9C /* UIImage+Extension(wm).swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension(wm).swift"; sourceTree = "<group>"; };
+		64434DBF27D9C6AD00C34E9C /* WMCameraViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMCameraViewController.swift; sourceTree = "<group>"; };
+		64434DC027D9C6AD00C34E9C /* WMVideoExporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMVideoExporter.swift; sourceTree = "<group>"; };
+		64434DC127D9C6AD00C34E9C /* WMCameraControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMCameraControl.swift; sourceTree = "<group>"; };
+		64434DC227D9C6AD00C34E9C /* WMCameraManger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMCameraManger.swift; sourceTree = "<group>"; };
+		64434DC327D9C6AD00C34E9C /* WMDeviceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMDeviceOrientation.swift; sourceTree = "<group>"; };
+		64434DC427D9C6AD00C34E9C /* WMImageRotate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMImageRotate.swift; sourceTree = "<group>"; };
+		64434DD427D9D68800C34E9C /* WMNavView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WMNavView.swift; sourceTree = "<group>"; };
 		6444779027C632FC0052EF56 /* HomeTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableCell.swift; sourceTree = "<group>"; };
 		6444779227C716A50052EF56 /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		6444779427C717150052EF56 /* CostomModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CostomModel.swift; sourceTree = "<group>"; };
@@ -137,6 +185,8 @@
 		64BA18BB27C6178300580022 /* UIEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIEnum.swift; sourceTree = "<group>"; };
 		64BA18BD27C61BD700580022 /* MainUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUtils.swift; sourceTree = "<group>"; };
 		64BA18BF27C6295500580022 /* HomeColletionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeColletionCell.swift; sourceTree = "<group>"; };
+		64C12CCF27DAF062002F44A2 /* SVideoEditVc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SVideoEditVc.swift; sourceTree = "<group>"; };
+		64C12CD027DAF062002F44A2 /* SVideoEditVc.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SVideoEditVc.xib; sourceTree = "<group>"; };
 		B48AD6BAB5E08750DCD707B5 /* Pods-text.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-text.debug.xcconfig"; path = "Target Support Files/Pods-text/Pods-text.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -167,6 +217,23 @@
 				640EFB3827D5A38C006BA04A /* GoolegeVC.swift */,
 			);
 			path = "GooleG(谷歌)";
+			sourceTree = "<group>";
+		};
+		6414DE0F27D8473C00059C44 /* Relese(发布) */ = {
+			isa = PBXGroup;
+			children = (
+				64434DB427D9C6AD00C34E9C /* WMVideo */,
+				6414DE1027D881CA00059C44 /* ReleseVc.swift */,
+				64434DA827D987FD00C34E9C /* SPublicVC.swift */,
+				64434DAA27D98E0000C34E9C /* uploadImageCell.swift */,
+				64434DAB27D98E0000C34E9C /* uploadImageCell.xib */,
+				64434DAE27D98E1400C34E9C /* addImageCell.swift */,
+				64434DAF27D98E1400C34E9C /* addImageCell.xib */,
+				64434DB227D9C5B300C34E9C /* sVideoRecordingVc.swift */,
+				64C12CCF27DAF062002F44A2 /* SVideoEditVc.swift */,
+				64C12CD027DAF062002F44A2 /* SVideoEditVc.xib */,
+			);
+			path = "Relese(发布)";
 			sourceTree = "<group>";
 		};
 		6429D58627C4C61800CD1D83 = {
@@ -264,6 +331,7 @@
 		6429D5E327C6132700CD1D83 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				6414DE0F27D8473C00059C44 /* Relese(发布) */,
 				640EFB3727D5A376006BA04A /* GooleG(谷歌) */,
 				6481FFBF27D08BFF0007F32F /* HomeVc */,
 				6481FFC027D08BFF0007F32F /* MeUserCenter */,
@@ -288,6 +356,37 @@
 				6429D5E827C6141500CD1D83 /* UIColorName.swift */,
 			);
 			path = "Constant(常量)";
+			sourceTree = "<group>";
+		};
+		64434DB427D9C6AD00C34E9C /* WMVideo */ = {
+			isa = PBXGroup;
+			children = (
+				64434DB527D9C6AD00C34E9C /* WMCameraResource.bundle */,
+				64434DB627D9C6AD00C34E9C /* WMVideoPlayer.swift */,
+				64434DD427D9D68800C34E9C /* WMNavView.swift */,
+				64434DB727D9C6AD00C34E9C /* WMVideoEditor.swift */,
+				64434DB827D9C6AD00C34E9C /* Tools */,
+				64434DBF27D9C6AD00C34E9C /* WMCameraViewController.swift */,
+				64434DC027D9C6AD00C34E9C /* WMVideoExporter.swift */,
+				64434DC127D9C6AD00C34E9C /* WMCameraControl.swift */,
+				64434DC227D9C6AD00C34E9C /* WMCameraManger.swift */,
+				64434DC327D9C6AD00C34E9C /* WMDeviceOrientation.swift */,
+				64434DC427D9C6AD00C34E9C /* WMImageRotate.swift */,
+			);
+			path = WMVideo;
+			sourceTree = "<group>";
+		};
+		64434DB827D9C6AD00C34E9C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				64434DB927D9C6AD00C34E9C /* Bundle+Extension(wm).swift */,
+				64434DBA27D9C6AD00C34E9C /* WMCameraFileTools.swift */,
+				64434DBB27D9C6AD00C34E9C /* WMVideoTools.swift */,
+				64434DBC27D9C6AD00C34E9C /* UIView+Extension(WM).swift */,
+				64434DBD27D9C6AD00C34E9C /* Timer+Extension(wm).swift */,
+				64434DBE27D9C6AD00C34E9C /* UIImage+Extension(wm).swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 		6444779627C751430052EF56 /* Http */ = {
@@ -433,7 +532,11 @@
 				6429D59F27C4C61C00CD1D83 /* LaunchScreen.storyboard in Resources */,
 				6429D59C27C4C61C00CD1D83 /* Assets.xcassets in Resources */,
 				6429D5E027C5D8ED00CD1D83 /* secondViewCell.xib in Resources */,
+				64434DB127D98E1400C34E9C /* addImageCell.xib in Resources */,
+				64C12CD227DAF062002F44A2 /* SVideoEditVc.xib in Resources */,
+				64434DC527D9C6AD00C34E9C /* WMCameraResource.bundle in Resources */,
 				6429D59A27C4C61800CD1D83 /* Main.storyboard in Resources */,
+				64434DAD27D98E0000C34E9C /* uploadImageCell.xib in Resources */,
 				647E659027C86ABB0088EE91 /* RefreshLoading.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,11 +613,14 @@
 				6429D5DC27C5D39700CD1D83 /* AlertVC.swift in Sources */,
 				6429D59727C4C61800CD1D83 /* ViewController.swift in Sources */,
 				6429D59327C4C61800CD1D83 /* AppDelegate.swift in Sources */,
+				64434DD027D9C6AD00C34E9C /* WMCameraControl.swift in Sources */,
 				6444779527C717150052EF56 /* CostomModel.swift in Sources */,
 				6481FFC627D09E350007F32F /* SBaseTableViewVC.swift in Sources */,
 				6429D5D327C5D02800CD1D83 /* UITextField+Extend.swift in Sources */,
+				64434DA927D987FD00C34E9C /* SPublicVC.swift in Sources */,
 				6429D5D227C5D02800CD1D83 /* UIView+Extend.swift in Sources */,
 				6429D5E227C5DAF400CD1D83 /* Macro.swift in Sources */,
+				64434DC627D9C6AD00C34E9C /* WMVideoPlayer.swift in Sources */,
 				6444779827C7516A0052EF56 /* HttpRequestUntil.swift in Sources */,
 				6444779C27C757500052EF56 /* HttpRequestModel.swift in Sources */,
 				6429D5C727C5D02800CD1D83 /* NSObject+Extend.swift in Sources */,
@@ -523,29 +629,44 @@
 				6481FFC827D09FBB0007F32F /* UserInfoVc.swift in Sources */,
 				647E4F6627D0573000E2D695 /* NoDataView.swift in Sources */,
 				64BA18BE27C61BD700580022 /* MainUtils.swift in Sources */,
+				64434DAC27D98E0000C34E9C /* uploadImageCell.swift in Sources */,
 				6429D5AF27C5CFD200CD1D83 /* UIViewController+Extend.swift in Sources */,
 				6414455527D5AB6300E0D31B /* LocationUtil.swift in Sources */,
+				64434DD127D9C6AD00C34E9C /* WMCameraManger.swift in Sources */,
 				644477A027C76DEF0052EF56 /* InterfaceRequest.swift in Sources */,
 				6429D5DF27C5D8ED00CD1D83 /* secondViewCell.swift in Sources */,
 				6429D5C827C5D02800CD1D83 /* String+Extend.swift in Sources */,
 				6429D5CD27C5D02800CD1D83 /* NSDecimalNumber+Extension.swift in Sources */,
 				6429D5D927C5D02800CD1D83 /* UIImage+Extend.swift in Sources */,
 				647E659227C86FAC0088EE91 /* CustomGifRefreshHeader.swift in Sources */,
+				6414DE1127D881CA00059C44 /* ReleseVc.swift in Sources */,
+				64434DCA27D9C6AD00C34E9C /* WMVideoTools.swift in Sources */,
+				64434DD527D9D68900C34E9C /* WMNavView.swift in Sources */,
 				647E658A27C868E00088EE91 /* UIScrollView+Extend.swift in Sources */,
 				6481FFCA27D1ECDC0007F32F /* QRAnmitionVc.swift in Sources */,
 				6429D5D427C5D02800CD1D83 /* Date+Extend.swift in Sources */,
+				64434DB027D98E1400C34E9C /* addImageCell.swift in Sources */,
 				6429D5AC27C5CF0800CD1D83 /* secondViewC.swift in Sources */,
 				6444779327C716A50052EF56 /* BaseModel.swift in Sources */,
 				6429D5CE27C5D02800CD1D83 /* NSAttributedString+Extend.swift in Sources */,
+				64434DCB27D9C6AD00C34E9C /* UIView+Extension(WM).swift in Sources */,
 				6429D5CB27C5D02800CD1D83 /* UIBarButtonItem+Extend.swift in Sources */,
 				6429D5D527C5D02800CD1D83 /* UIDevice+Extend.swift in Sources */,
 				6429D5E927C6141500CD1D83 /* UIColorName.swift in Sources */,
 				6481FFC227D08E780007F32F /* MeUserCell.swift in Sources */,
 				6429D5CC27C5D02800CD1D83 /* UIColor+Extend.swift in Sources */,
 				6444779127C632FC0052EF56 /* HomeTableCell.swift in Sources */,
+				64434DC827D9C6AD00C34E9C /* Bundle+Extension(wm).swift in Sources */,
 				6444779A27C752100052EF56 /* HttpEnum.swift in Sources */,
 				6429D5D827C5D02800CD1D83 /* UITableView+Extend.swift in Sources */,
+				64434DD327D9C6AD00C34E9C /* WMImageRotate.swift in Sources */,
 				647E4F6827D057D600E2D695 /* SBaseVc.swift in Sources */,
+				64C12CD127DAF062002F44A2 /* SVideoEditVc.swift in Sources */,
+				64434DCC27D9C6AD00C34E9C /* Timer+Extension(wm).swift in Sources */,
+				64434DCE27D9C6AD00C34E9C /* WMCameraViewController.swift in Sources */,
+				64434DB327D9C5B300C34E9C /* sVideoRecordingVc.swift in Sources */,
+				64434DC727D9C6AD00C34E9C /* WMVideoEditor.swift in Sources */,
+				64434DC927D9C6AD00C34E9C /* WMCameraFileTools.swift in Sources */,
 				6429D5E627C6137100CD1D83 /* MainTabbarVC.swift in Sources */,
 				6429D5D627C5D02800CD1D83 /* UIFont+Extend.swift in Sources */,
 				6429D5C627C5D02800CD1D83 /* Dictionary+Extend.swift in Sources */,
@@ -559,6 +680,9 @@
 				6429D5D727C5D02800CD1D83 /* UIButton+Extend.swift in Sources */,
 				64BA18C127C6295500580022 /* HomeColletionCell.swift in Sources */,
 				6429D5A827C4C78E00CD1D83 /* Device.swift in Sources */,
+				64434DCF27D9C6AD00C34E9C /* WMVideoExporter.swift in Sources */,
+				64434DCD27D9C6AD00C34E9C /* UIImage+Extension(wm).swift in Sources */,
+				64434DD227D9C6AD00C34E9C /* WMDeviceOrientation.swift in Sources */,
 				6403862627CDED0900316B09 /* sampleModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -738,7 +862,7 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -778,7 +902,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
