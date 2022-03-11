@@ -93,21 +93,61 @@ class SVideoEditVc: SBaseVc {
 
     
     @objc func cancleButtonAction(){
+          
+        guard  titleTextF.text?.count == 0 else {
+             
+            let alertView = UIAlertController.init(title: "提示", message: "还有未保存的内容，确定退出发布吗？", preferredStyle: .alert)
+
+                let alert = UIAlertAction.init(title: "确定", style: .destructive) { (UIAlertAction) in
+                    self.dismiss(animated: true, completion: nil)
+                }
+                let cancleAlert = UIAlertAction.init(title: "取消", style: .cancel) { (UIAlertAction) in
+                    
+                    print("点击取消按钮")
+                }
+                alertView.addAction(cancleAlert)
+
+                alertView.addAction(alert);
+
+            self.present(alertView, animated: true, completion: nil)
+            
+            
+            return
+        }
+        
          dismiss(animated: true, completion: nil)
     }
     
     @objc func publicBUttonAction(){
-           
-        PHCachingImageManager().requestAVAsset(forVideo: model.asset, options:nil, resultHandler: { (asset, audioMix, info)in
-            print("正在处理...")
-            guard  let avAsset = asset as? AVURLAsset else {return}
-            WMVideoTools.wm_compressVideoWithQuality(presetName: "AVAssetExportPresetHighestQuality", inputURL: avAsset.url) { outputUrl in
-                print("处理完成...上传中")
-                print("压缩后的路径即上传路径===\(outputUrl?.path)")
-                print("上传成功得到路径")
-                print("请求接口，传入视频线上路径")
-            }
-        })
+        
+     
+        guard titleTextF.text?.count ?? 0 >= 5 else {
+        print("字符不够")
+            tipView.isHidden = false
+            tipViewHeight.constant = 40
+          return
+        }
+        
+        
+         
+        
+        
+        if locationPath.count > 0 {
+            //直接把改路径上传
+            
+        }else{
+            PHCachingImageManager().requestAVAsset(forVideo: model.asset, options:nil, resultHandler: { (asset, audioMix, info)in
+                print("正在处理...")
+                guard  let avAsset = asset as? AVURLAsset else {return}
+                WMVideoTools.wm_compressVideoWithQuality(presetName: "AVAssetExportPresetHighestQuality", inputURL: avAsset.url) { outputUrl in
+                    print("处理完成...上传中")
+                    print("压缩后的路径即上传路径===\(outputUrl?.path)")
+                    print("上传成功得到路径")
+                    print("请求接口，传入视频线上路径")
+                }
+            })
+        }
+      
     }
     ///视频本地播放
     @IBAction func playAction(_ sender: UIButton) {
@@ -164,6 +204,8 @@ extension SVideoEditVc: UITextFieldDelegate {
         if let text = textField.text, let textRange = Range(range, in: text) {
             let updatedText = text.replacingCharacters(in: textRange, with: string)
               if textField == titleTextF {
+                  tipView.isHidden = true
+                  tipViewHeight.constant = 0
                 return updatedText.count <= 200
             }
         }

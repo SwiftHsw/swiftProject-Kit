@@ -1057,11 +1057,61 @@
                                             <outlet property="delegate" destination="tcE-3C-20f" id="CNc-IK-Ce6"/>
                                         </connections>
                                     </collectionView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EDK-jG-cgy">
+                                        <rect key="frame" x="15" y="30" width="200" height="250"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="00F-5K-C03">
+                                                <rect key="frame" x="0.0" y="10" width="190" height="240"/>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="haq-CT-n5u">
+                                                <rect key="frame" x="70" y="105" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="VLd-0L-8jW"/>
+                                                    <constraint firstAttribute="height" constant="50" id="qfJ-tm-U6h"/>
+                                                </constraints>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" image="btn-check-selected"/>
+                                                <connections>
+                                                    <action selector="playVideo:" destination="tcE-3C-20f" eventType="touchUpInside" id="c2e-le-R3B"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Wd-Qm-g47">
+                                                <rect key="frame" x="170" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" red="0.55294117649999996" green="0.070588235289999995" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="hpT-HC-nZl"/>
+                                                    <constraint firstAttribute="width" constant="30" id="tw2-ur-5za"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="删除">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deleateAction:" destination="tcE-3C-20f" eventType="touchUpInside" id="9nR-s5-Zup"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="6Wd-Qm-g47" secondAttribute="trailing" id="3Rl-FE-FsX"/>
+                                            <constraint firstAttribute="trailing" secondItem="00F-5K-C03" secondAttribute="trailing" constant="10" id="ATQ-Zn-rja"/>
+                                            <constraint firstAttribute="bottom" secondItem="00F-5K-C03" secondAttribute="bottom" id="FBA-sI-qsE"/>
+                                            <constraint firstItem="haq-CT-n5u" firstAttribute="centerX" secondItem="00F-5K-C03" secondAttribute="centerX" id="P7p-qG-dCr"/>
+                                            <constraint firstItem="6Wd-Qm-g47" firstAttribute="top" secondItem="EDK-jG-cgy" secondAttribute="top" id="Zql-fd-TRM"/>
+                                            <constraint firstAttribute="height" constant="250" id="aPY-nn-v6O"/>
+                                            <constraint firstAttribute="width" constant="200" id="pft-lH-8ia"/>
+                                            <constraint firstItem="haq-CT-n5u" firstAttribute="centerY" secondItem="00F-5K-C03" secondAttribute="centerY" id="xOP-h9-R57"/>
+                                            <constraint firstItem="00F-5K-C03" firstAttribute="leading" secondItem="EDK-jG-cgy" secondAttribute="leading" id="xtM-iD-0Cv"/>
+                                            <constraint firstItem="00F-5K-C03" firstAttribute="top" secondItem="EDK-jG-cgy" secondAttribute="top" constant="10" id="y3c-ir-egG"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="q4D-cK-3uc" secondAttribute="trailing" id="1F7-Ii-F4X"/>
                                     <constraint firstItem="q4D-cK-3uc" firstAttribute="top" secondItem="Eox-xw-QOn" secondAttribute="top" id="6Pc-vv-cJh"/>
+                                    <constraint firstItem="EDK-jG-cgy" firstAttribute="top" secondItem="q4D-cK-3uc" secondAttribute="top" constant="30" id="Iy7-2d-Wzw"/>
+                                    <constraint firstItem="EDK-jG-cgy" firstAttribute="leading" secondItem="Eox-xw-QOn" secondAttribute="leading" constant="15" id="msT-ab-98n"/>
                                     <constraint firstAttribute="bottom" secondItem="q4D-cK-3uc" secondAttribute="bottom" id="ojm-Ho-bG0"/>
                                     <constraint firstItem="q4D-cK-3uc" firstAttribute="leading" secondItem="Eox-xw-QOn" secondAttribute="leading" id="otd-E6-xX4"/>
                                 </constraints>
@@ -1086,6 +1136,8 @@
                         <outlet property="contentTextV" destination="jdq-yL-LZ3" id="gLQ-jW-uL7"/>
                         <outlet property="pleacHold" destination="Zd2-yD-hxP" id="wfA-RY-cRU"/>
                         <outlet property="textviewHieghtCons" destination="mlU-6U-Wl0" id="3Cy-8w-guG"/>
+                        <outlet property="videoFistImage" destination="00F-5K-C03" id="jrk-Bd-WgW"/>
+                        <outlet property="videoView" destination="EDK-jG-cgy" id="43a-ie-q2c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AUf-nM-DXY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1175,6 +1227,7 @@
         <image name="btm_navigation_black" width="16" height="16"/>
         <image name="btm_nearby" width="131" height="56"/>
         <image name="btm_sign" width="21" height="37"/>
+        <image name="btn-check-selected" width="24" height="24"/>
         <image name="home_wallet_bg" width="224" height="127"/>
         <image name="scan_border" width="286" height="286"/>
         <image name="scan_close" width="54" height="54"/>

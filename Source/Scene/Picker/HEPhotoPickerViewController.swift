@@ -47,6 +47,11 @@ let kScreenHeight = UIScreen.main.bounds.size.height
     ///
     /// - Parameter picker: 选择图片的控制器
     @objc optional func pickerControllerDidCancel(_ picker:UIViewController)
+    
+    
+    //点击了或者没点击
+    func pickerIsSelectVideo(isSelect:Bool)
+    
 }
 
 
@@ -517,7 +522,7 @@ extension HEPhotoPickerViewController : UICollectionViewDelegate,UICollectionVie
         cell.model = model
         cell.pickerOptions = self.pickerOptions
         cell.checkBtnnClickClosure = {[unowned self] (selectedBtn) in
-            
+            delegate?.pickerIsSelectVideo(isSelect: selectedBtn.isSelected)
             self.updateSelectedCell(selectedIndex: indexPath.row, selectedBtn: selectedBtn)
         }
         return cell

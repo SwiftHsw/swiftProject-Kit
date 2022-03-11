@@ -8,7 +8,9 @@
 import UIKit
 import TZImagePickerController
 import PromiseKit
- 
+import Photos
+ import AVKit
+
 class SPublicVC: SBaseVc ,UICollectionViewDelegate,UICollectionViewDataSource{
 
     @IBOutlet weak var pleacHold: UILabel!
@@ -33,6 +35,18 @@ class SPublicVC: SBaseVc ,UICollectionViewDelegate,UICollectionViewDataSource{
     var dataArray : [UIImage] = []
  
     var defultImage = UIImage.init(named: "scan_photo.png")
+    
+    //是否是选择了一个视频
+    var isVideo : Bool = false
+    //记录视频选中的PHAsset
+    var pathPHAssest : PHAsset?
+    
+    
+    @IBOutlet weak var videoFistImage: UIImageView!
+    
+    
+    @IBOutlet weak var videoView: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,10 +75,10 @@ class SPublicVC: SBaseVc ,UICollectionViewDelegate,UICollectionViewDataSource{
         button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -3, bottom: 0, right: 0)
         let backBarButtonItem = UIBarButtonItem(customView: button)
         self.navigationItem.leftBarButtonItem = backBarButtonItem
- 
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Post", style: .plain, target: self, action: #selector(publickAction))
-        
         contentTextV.delegate = self
+        
+        videoView.isHidden = true
     }
     
     
@@ -96,9 +110,7 @@ class SPublicVC: SBaseVc ,UICollectionViewDelegate,UICollectionViewDataSource{
        let nav = BaseNavigationController.init(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
        self.present(nav, animated: true, completion: nil )
-       
-
-               
+        
     }
     
     
@@ -143,13 +155,17 @@ class SPublicVC: SBaseVc ,UICollectionViewDelegate,UICollectionViewDataSource{
             print(index)
             let vc = TZImagePickerController.init(maxImagesCount: index, delegate: nil)
             vc?.allowPickingImage = true
-            vc?.allowPickingVideo = true
+            ///默认情况下/如果有选择几张图后又进去选择，这时候只能选择图片
+             vc?.allowPickingVideo = self.dataArray.count == 1
+             
             vc?.allowTakeVideo = false
             vc?.allowTakePicture = false
             vc?.allowCrop = false
             vc?.modalPresentationStyle = .fullScreen
             vc?.didFinishPickingPhotosHandle = { (photos, assets, _) in
-
+                self.isVideo = false
+                self.videoView.isHidden = true
+                self.collotionV.isHidden = false
                 for s in photos!{
                     print(s)
                     self.dataArray.insert(s, at: 0)
@@ -163,12 +179,57 @@ class SPublicVC: SBaseVc ,UICollectionViewDelegate,UICollectionViewDataSource{
                   
             }
             vc?.didFinishPickingVideoHandle = { (image, asset) in
- 
+                self.isVideo = true
+                self.videoView.isHidden = false
+                self.collotionV.isHidden = true
+                if let fistImage = image{
+                    self.videoFistImage.image = fistImage
+                    self.pathPHAssest = asset
+                }
             }
             self.present(vc!, animated: true, completion: nil)
         }
         
     }
+    
+    @IBAction func playVideo(_ sender: Any) {
+        
+        
+        PHCachingImageManager().requestAVAsset(forVideo: self.pathPHAssest!, options:nil, resultHandler: { (asset, audioMix, info)in
+            guard  let avAsset = asset as? AVURLAsset else {return}
+            print(avAsset.url)
+            DispatchQueue.main.async {
+                let player = AVPlayer(url:avAsset.url )
+                    let  playerViewController = AVPlayerViewController()
+                    playerViewController.player = player
+                self.present(playerViewController, animated: true)
+            }
+        })
+        
+//        PHCachingImageManager().requestAVAsset(forVideo: pathPHAssest, options:nil, resultHandler: { (asset, audioMix, info)in
+////            print("正在处理...")
+////            guard  let avAsset = asset as? AVURLAsset else {return}
+////            WMVideoTools.wm_compressVideoWithQuality(presetName: "AVAssetExportPresetHighestQuality", inputURL: avAsset.url) { outputUrl in
+////                print("处理完成...上传中")
+////                print("压缩后的路径即上传路径===\(outputUrl?.path)")
+////                print("上传成功得到路径")
+////                print("请求接口，传入视频线上路径")
+////            }
+//                //播放
+//        })
+        
+    }
+    
+    @IBAction func deleateAction(_ sender: Any) {
+        
+        self.pathPHAssest = nil
+        self.isVideo = false
+        self.videoView.isHidden = true
+        self.collotionV.isHidden = false
+        
+    }
+    
+    
     
     @objc func didClearBtnAction(_ sender:UIButton){
         
@@ -188,7 +249,7 @@ extension SPublicVC:UITextViewDelegate{
     func textViewDidChange(_ textView: UITextView) {
         
         pleacHold.isHidden = textView.text.count > 0
-         
+        
         //获取frame值
         let constrainSize=CGSize(width:CGFloat(ScreenWidth - 30),height:CGFloat(MAXFLOAT))
         let size = textView.sizeThatFits(constrainSize)

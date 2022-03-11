@@ -22,6 +22,8 @@ class sVideoRecordingVc: SBaseVc{
     @IBOutlet weak var selectVideoBtn: UIButton!
     @IBOutlet weak var takeBtn: UIButton!
     
+    let compleBtn = UIButton()
+    
     lazy var mainScolleView : UIScrollView = {
         let main  = UIScrollView.init()
         main.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: ScreenHeight)
@@ -143,11 +145,13 @@ class sVideoRecordingVc: SBaseVc{
         
         
         //确认
-        let compleBtn = UIButton()
-        compleBtn.frame = CGRect(x: navView.wm_width - 50, y: navView.wm_height - 38 , width: 40, height: 30)
-        compleBtn.setTitle("完成", for: .normal)
+         
+        compleBtn.frame = CGRect(x: navView.wm_width - 50, y: navView.wm_height - 38 , width: 50, height: 30)
+        compleBtn.setTitle("下一步", for: .normal)
+        compleBtn.titleLabel?.font = UIFont.systemFont(ofSize: 15)
         compleBtn.setTitleColor(.white, for: .normal)
         compleBtn.addTarget(self, action: #selector(compleBtnAction), for: .touchUpInside)
+        compleBtn.isHidden = true
         navView.addSubview(compleBtn)
         
         mainScolleView.addSubview(navView)
@@ -166,11 +170,11 @@ class sVideoRecordingVc: SBaseVc{
     
     @objc func successVideoPaly(){
         self.bottomBar.isHidden = false
-        mainScolleView.isUserInteractionEnabled = true
+        mainScolleView.contentSize = CGSize(width: CGFloat(2*ScreenWidth), height: 0)
     }
     @objc func benginPlay(){
         self.bottomBar.isHidden = true
-        mainScolleView.isUserInteractionEnabled = false
+        mainScolleView.contentSize = CGSize(width: 0, height: 0)
     }
      
     @IBAction func takeAction(_ sender: UIButton) {
@@ -209,10 +213,22 @@ extension sVideoRecordingVc : HEPhotoPickerViewControllerDelegate{
         // 实现多次累加选择时，需要把选中的模型保存起来，传给picker
         self.selectedModel = selectedModel
         self.visibleImages = selectedImages
-        selectVideoSucceeBlock?((self.selectedModel,self.visibleImages))
+        if self.selectedModel.count > 0{
+            selectVideoSucceeBlock?((self.selectedModel,self.visibleImages))
+        }else{
+            
+        }
+        
     }
     func pickerControllerDidCancel(_ picker: UIViewController) {
         // 取消选择后的一些操作
+    }
+    
+    func pickerIsSelectVideo(isSelect: Bool) {
+        
+        //下一步是否显示
+        compleBtn.isHidden = !isSelect
+        
     }
     
 }
