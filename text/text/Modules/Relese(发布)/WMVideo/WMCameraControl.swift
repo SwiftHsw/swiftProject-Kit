@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ZLPhotoBrowser
 
 
 
@@ -185,7 +186,9 @@ class WMCameraControl: UIView {
     }
     
     func longPressEnd() {
+    
         guard let timer = timer else { return }
+       
         timer.invalidate()
         self.timer = nil
         
@@ -209,6 +212,21 @@ class WMCameraControl: UIView {
             self.retakeButton.wm_x = self.takeButton.wm_x + 100
 //            self.takeButton.wm_x = self.wm_width - self.takeButton.wm_width - 50
         })
+        
+        if recordTime < 2{
+              
+            let alertView = UIAlertController.init(title: "提示", message: "录制时间不能小于2秒", preferredStyle: .alert)
+                let alert = UIAlertAction.init(title: "确定", style: .destructive) { (UIAlertAction) in
+                    self.sss()
+                }
+                alertView.addAction(alert);
+
+            self.getCurrentVC()?.present(alertView, animated: true, completion: nil)
+            
+           
+        }
+        
+        
     }
     
     @objc func retakeButtonClick() {

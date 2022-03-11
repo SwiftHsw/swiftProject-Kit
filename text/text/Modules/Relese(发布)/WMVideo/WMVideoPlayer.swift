@@ -21,7 +21,7 @@ class WMVideoPlayer: UIView {
         
         playerLayer = AVPlayerLayer.init(player: player)
         playerLayer.frame = layer.bounds
-        playerLayer.videoGravity = .resizeAspect
+        playerLayer.videoGravity = .resizeAspectFill
         layer.addSublayer(playerLayer)
         
         NotificationCenter.default.addObserver(self, selector: #selector(finishPlay), name: .AVPlayerItemDidPlayToEndTime, object: nil)

@@ -51,10 +51,12 @@ class sVideoRecordingVc: SBaseVc{
  
         }
     }
-    
+    override var preferredStatusBarStyle : UIStatusBarStyle{
+        return .lightContent
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-  
+          
         self.isHiddenNavBar = true
         view.backgroundColor = .black
         
@@ -75,7 +77,7 @@ class sVideoRecordingVc: SBaseVc{
         ///视频拍摄
         let vc = WMCameraViewController()
         //最长录制5分钟视频
-        vc.videoMaxLength = 60*5
+        vc.videoMaxLength = 60*1
         vc.inputType = .video
         vc.completeBlock = { url, type in
             print("url == \(url)")
@@ -105,12 +107,15 @@ class sVideoRecordingVc: SBaseVc{
         options.maxCountOfVideo = 1
         pickerVc = HEPhotoPickerViewController.init(delegate: self, options: options)
         ///由于外部引用，重新设置view、和集合视图的坐标
-        pickerVc.view.frame = CGRect(x: CGFloat(ScreenWidth), y:StatusBarAndNavigationBarHeight, width: CGFloat(ScreenWidth), height: CGFloat(ScreenHeight-StatusBarAndNavigationBarHeight-100))
+        pickerVc.view.frame = CGRect(x: CGFloat(ScreenWidth),
+                                     y:StatusBarAndNavigationBarHeight,
+                                     width: CGFloat(ScreenWidth),
+                                     height: CGFloat(ScreenHeight-StatusBarAndNavigationBarHeight-TabBarSafeBottomMargin - 60))
         mainScolleView.addSubview(pickerVc.view)
         for subs in pickerVc.view.subviews{
             if subs is UICollectionView {
                 //设置collectionView的真实大小
-                subs.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: CGFloat(ScreenHeight-StatusBarAndNavigationBarHeight-100))
+                subs.frame = CGRect(x: 0, y: 0, width: ScreenWidth, height: CGFloat(ScreenHeight-StatusBarAndNavigationBarHeight-TabBarSafeBottomMargin - 60))
                 subs.backgroundColor = .black
             }
         }

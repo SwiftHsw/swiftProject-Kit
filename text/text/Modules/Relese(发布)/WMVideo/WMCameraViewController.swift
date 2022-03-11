@@ -44,16 +44,18 @@ class WMCameraViewController: UIViewController {
         
         let scale: CGFloat = 16.0 / 9.0
         let contentWidth = UIScreen.main.bounds.size.width
-        let contentHeight = min(scale * contentWidth, UIScreen.main.bounds.size.height)
-        
+//        let contentHeight = min(scale * contentWidth, UIScreen.main.bounds.size.height)
+        // iphoneX - 导航栏 - 20进度条
+        let contentHeight = UIScreen.main.bounds.size.height - TabBarSafeBottomMargin - StatusBarAndNavigationBarHeight - 20
         cameraContentView.backgroundColor = UIColor.black
-        cameraContentView.frame = CGRect(x: 0, y: 0, width: contentWidth, height: contentHeight)
-        cameraContentView.center = self.view.center
+        cameraContentView.frame = CGRect(x: 0, y: StatusBarAndNavigationBarHeight, width: contentWidth, height: contentHeight)
+//        cameraContentView.center = self.view.center
         self.view.addSubview(cameraContentView)
         
         //创建进度条
-         
-        progressView = UIProgressView.init(frame: CGRect(x: 0, y: cameraContentView.wm_bottomY, width: ScreenWidth, height: 20))
+        let y = self.view.wm_height - StatusBarAndNavigationBarHeight - CGFloat(isIphoneX ? 5 : 0)
+        
+        progressView = UIProgressView.init(frame: CGRect(x: 0, y: y, width: ScreenWidth, height: 5))
         progressView.progressTintColor = .red
         progressView.trackTintColor = .black
         progressView.isHidden = true
@@ -159,6 +161,7 @@ extension WMCameraViewController: WMCameraControlDelegate {
         
     }
     
+    //录制好了 准备发布
     func cameraControlEndTakeVideo() {
         manager.endRecordingVideo { [weak self] (videoUrl) in
             guard let `self` = self else { return }

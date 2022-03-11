@@ -87,7 +87,7 @@ class SVideoEditVc: SBaseVc {
     override func loadView() {
         super.loadView()
         Bundle.main.loadNibNamed(self.className, owner: self, options: nil)
-        navTop.constant = StatusBarAndNavigationBarHeight
+        navTop.constant =  isIphoneX ? StatusBarAndNavigationBarHeight :  0
     }
     
 
